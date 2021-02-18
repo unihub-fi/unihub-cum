@@ -14,14 +14,14 @@ import '@pancakeswap/pancake-swap-lib/contracts/math/SafeMath.sol';
 import '@pancakeswap/pancake-swap-lib/contracts/token/BEP20/IBEP20.sol';
 import '@pancakeswap/pancake-swap-lib/contracts/token/BEP20/SafeBEP20.sol';
 
-// SupportApe is the chef of new tokens. He can make yummy food and he is a fair guy as well as MasterApe.
-contract SupportApe {
+// SupportUniHub is the chef of new tokens. He can make yummy food and he is a fair guy as well as MasterUniHub.
+contract SupportUniHub {
     using SafeMath for uint256;
     using SafeBEP20 for IBEP20;
 
     // Info of each user.
     struct UserInfo {
-        uint256 amount;   // How many BANANASPLIT tokens the user has provided.
+        uint256 amount;   // How many CUMSHOT tokens the user has provided.
         uint256 rewardDebt;  // Reward debt. See explanation below.
         uint256 rewardPending;
         //
@@ -30,7 +30,7 @@ contract SupportApe {
         //
         //   pending reward = (user.amount * pool.accRewardPerShare) - user.rewardDebt + user.rewardPending
         //
-        // Whenever a user deposits or withdraws BANANASPLIT tokens to a pool. Here's what happens:
+        // Whenever a user deposits or withdraws CUMSHOT tokens to a pool. Here's what happens:
         //   1. The pool's `accRewardPerShare` (and `lastRewardBlock`) gets updated.
         //   2. User receives the pending reward sent to his/her address.
         //   3. User's `amount` gets updated.
@@ -44,14 +44,14 @@ contract SupportApe {
         uint256 accRewardPerShare; // Accumulated reward per share, times 1e12. See below.
     }
 
-    // The BANANASPLIT TOKEN!
+    // The CUMSHOT TOKEN!
     IBEP20 public syrup;
     // rewards created per block.
     uint256 public rewardPerBlock;
 
     // Info.
     PoolInfo public poolInfo;
-    // Info of each user that stakes BananaSplit tokens.
+    // Info of each user that stakes CumShot tokens.
     mapping (address => UserInfo) public userInfo;
 
     // addresses list
@@ -67,12 +67,12 @@ contract SupportApe {
     event EmergencyWithdraw(address indexed user, uint256 amount);
 
     constructor(
-        IBEP20 _bananaSplit,
+        IBEP20 _cumShot,
         uint256 _rewardPerBlock,
         uint256 _startBlock,
         uint256 _endBlock
     ) public {
-        syrup = _bananaSplit;
+        syrup = _cumShot;
         rewardPerBlock = _rewardPerBlock;
         startBlock = _startBlock;
         bonusEndBlock = _endBlock;
@@ -131,7 +131,7 @@ contract SupportApe {
     }
 
 
-    // Deposit BananaSplit tokens to SupportApe for Reward allocation.
+    // Deposit CumShot tokens to SupportUniHub for Reward allocation.
     function deposit(uint256 _amount) public {
         require (_amount > 0, 'amount 0');
         UserInfo storage user = userInfo[msg.sender];
@@ -148,7 +148,7 @@ contract SupportApe {
         emit Deposit(msg.sender, _amount);
     }
 
-    // Withdraw BananaSplit tokens from SupportApe.
+    // Withdraw CumShot tokens from SupportUniHub.
     function withdraw(uint256 _amount) public {
         require (_amount > 0, 'amount 0');
         UserInfo storage user = userInfo[msg.sender];

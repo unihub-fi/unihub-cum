@@ -35,9 +35,9 @@ contract BnbStaking is Ownable {
     // Info of each pool.
     struct PoolInfo {
         IBEP20 lpToken;           // Address of LP token contract.
-        uint256 allocPoint;       // How many allocation points assigned to this pool. BANANAs to distribute per block.
-        uint256 lastRewardBlock;  // Last block number that BANANAs distribution occurs.
-        uint256 accCakePerShare; // Accumulated BANANAs per share, times 1e12. See below.
+        uint256 allocPoint;       // How many allocation points assigned to this pool. CUMs to distribute per block.
+        uint256 lastRewardBlock;  // Last block number that CUMs distribution occurs.
+        uint256 accCakePerShare; // Accumulated CUMs per share, times 1e12. See below.
     }
 
     // The REWARD TOKEN
@@ -50,7 +50,7 @@ contract BnbStaking is Ownable {
     // WBNB
     address public immutable WBNB;
 
-    // BANANA tokens created per block.
+    // CUM tokens created per block.
     uint256 public rewardPerBlock;
 
     // Info of each pool.
@@ -61,9 +61,9 @@ contract BnbStaking is Ownable {
     uint256 public limitAmount = 10000000000000000000;
     // Total allocation poitns. Must be the sum of all allocation points in all pools.
     uint256 public totalAllocPoint = 0;
-    // The block number when BANANA mining starts.
+    // The block number when CUM mining starts.
     uint256 public startBlock;
-    // The block number when BANANA mining ends.
+    // The block number when CUM mining ends.
     uint256 public bonusEndBlock;
 
     event Deposit(address indexed user, uint256 amount);

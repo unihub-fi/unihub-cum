@@ -1,16 +1,16 @@
 const { expectRevert, time } = require('@openzeppelin/test-helpers');
-const BananaToken = artifacts.require('BananaToken');
-const MasterApe = artifacts.require('MasterApe');
-const BananaSplitBar = artifacts.require('BananaSplitBar');
-const SupportApe = artifacts.require('SupportApe');
+const CumToken = artifacts.require('CumToken');
+const MasterUniHub = artifacts.require('MasterUniHub');
+const CumShotBar = artifacts.require('CumShotBar');
+const SupportUniHub = artifacts.require('SupportUniHub');
 const MockBEP20 = artifacts.require('libs/MockBEP20');
 
-contract('SupportApe', ([alice, bob, carol, dev, minter]) => {
+contract('SupportUniHub', ([alice, bob, carol, dev, minter]) => {
   beforeEach(async () => {
     this.syrup = await MockBEP20.new('LPToken', 'LP1', '1000000', {
       from: minter,
     });
-    this.chef = await SupportApe.new(this.syrup.address, '40', '300', '400', {
+    this.chef = await SupportUniHub.new(this.syrup.address, '40', '300', '400', {
       from: minter,
     });
   });
@@ -162,12 +162,12 @@ contract('SupportApe', ([alice, bob, carol, dev, minter]) => {
   });
 
   it('try syrup', async () => {
-    this.cake = await BananaToken.new({ from: minter });
-    this.syrup = await BananaSplitBar.new(this.cake.address, { from: minter });
+    this.cake = await CumToken.new({ from: minter });
+    this.syrup = await CumShotBar.new(this.cake.address, { from: minter });
     this.lp1 = await MockBEP20.new('LPToken', 'LP1', '1000000', {
       from: minter,
     });
-    this.chef = await MasterApe.new(
+    this.chef = await MasterUniHub.new(
       this.cake.address,
       this.syrup.address,
       dev,
@@ -193,7 +193,7 @@ contract('SupportApe', ([alice, bob, carol, dev, minter]) => {
     await time.advanceBlockTo('510');
     await this.chef.enterStaking('10', { from: alice });
 
-    this.chef2 = await SupportApe.new(this.syrup.address, '40', '600', '800', {
+    this.chef2 = await SupportUniHub.new(this.syrup.address, '40', '600', '800', {
       from: minter,
     });
     await this.syrup.approve(this.chef2.address, '10', { from: alice });
