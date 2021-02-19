@@ -9,7 +9,7 @@ pragma solidity 0.6.12;
  * GitHub:   https://github.com/ApeSwapFinance
  */
 
-interface IMasterApe {
+interface IMasterUniHub {
     function updateMultiplier(uint256 multiplierNumber) external; // onlyOwner
     function add(uint256 _allocPoint, address _lpToken, bool _withUpdate) external; // onlyOwner
     function set(uint256 _pid, uint256 _allocPoint, bool _withUpdate) external; // onlyOwner

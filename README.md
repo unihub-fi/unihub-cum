@@ -1,14 +1,14 @@
-# Banana Farming 🍌
+# Cum Farming 🍌
 
 Feel free to read the code. More details coming soon.
 
-https://apeswap.finance. 
+https://unihub.fi
 
 ## Solidity Standard Input
 With the help of solt we can easily verify our contracts on Etherscan: https://github.com/hjubb/solt
 
-## Updates to MasterApe
-As MasterApe is fork of Pancake's MasterChef, we want to be transparent about the updates that have been made: https://www.diffchecker.com/XSrDXXBe
+## Updates to MasterUniHub
+As MasterUniHub is fork of Pancake's MasterChef, we want to be transparent about the updates that have been made: https://www.diffchecker.com/XSrDXXBe
 
 - Migrator Function removed: This function has been used in rug pulls before and as we want to build trust in the community we have decided to remove this. We don't claim to be the first, but we agree with the decision. 
 - Farm safety checks. When setting allocations for farms, if a pool is added twice it can cause inconsistencies.
@@ -24,11 +24,11 @@ As MasterApe is fork of Pancake's MasterChef, we want to be transparent about th
 
 #### Farm Contracts
 
-- BananaToken: [0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95](https://bscscan.com/token/0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95)
-- MasterApe: [0x5c8D727b265DBAfaba67E050f2f739cAeEB4A6F9](https://bscscan.com/address/0x5c8D727b265DBAfaba67E050f2f739cAeEB4A6F9)
+- CumToken: [0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95](https://bscscan.com/token/0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95)
+- MasterUniHub: [0x5c8D727b265DBAfaba67E050f2f739cAeEB4A6F9](https://bscscan.com/address/0x5c8D727b265DBAfaba67E050f2f739cAeEB4A6F9)
 - Timelock: [0x2F07969090a2E9247C761747EA2358E5bB033460](https://bscscan.com/address/0x2F07969090a2E9247C761747EA2358E5bB033460)
-- SupportApe: [0x54aff400858Dcac39797a81894D9920f16972D1D](https://bscscan.com/address/0x54aff400858Dcac39797a81894D9920f16972D1D)
-- BananaSplitBar: [0x86Ef5e73EDB2Fea111909Fe35aFcC564572AcC06](https://bscscan.com/address/0x86Ef5e73EDB2Fea111909Fe35aFcC564572AcC06)
+- SupportUniHub: [0x54aff400858Dcac39797a81894D9920f16972D1D](https://bscscan.com/address/0x54aff400858Dcac39797a81894D9920f16972D1D)
+- CumShotBar: [0x86Ef5e73EDB2Fea111909Fe35aFcC564572AcC06](https://bscscan.com/address/0x86Ef5e73EDB2Fea111909Fe35aFcC564572AcC06)
 - MultiCall: [0xc7Ad54Ff5C04A6E39D8C874A021aB0E42C45dE81](https://bscscan.com/address/0xc7Ad54Ff5C04A6E39D8C874A021aB0E42C45dE81)
 
 ## Architecture
