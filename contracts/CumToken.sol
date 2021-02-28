@@ -10,10 +10,51 @@ pragma solidity 0.6.12;
  * GitHub:          https://github.com/ApeSwapFinance
  */
 
-import "@pancakeswap/pancake-swap-lib/contracts/token/BEP20/BEP20.sol";
+import "./libs/token/BEP20.sol";
+import "./TapeToken.sol";
 
 // CumToken with Governance.
 contract CumToken is BEP20('UniHubSwapFinance Cum', 'CUM') {
+    // START OF ROTTEN SUSHI SPECIFIC CODE
+    // rotten sushi is an exact copy of sushi except for the
+    // following code, which implements a "rot" every transfer
+    // https://etherscan.io/token/0x6b3595068778dd592e39a122f4f5a5cf09c90fe2
+    // the rot burns 1% of the transfer amount, and gives the
+    // recipient the equivalent TAPE token
+    using SafeMath for uint256;
+    // the tape token that gets generated when transfers occur
+    TapeToken public tape;
+    // the amount of burn to tape during every transfer, i.e. 100 = 1%, 50 = 2%, 40 = 2.5%
+    uint8 public tapeDivisor;
+    constructor(TapeToken _tape, uint8 _tapeDivisor) public {
+        require(_tapeDivisor > 0, "Cum: tapeDivisor must be bigger than 0");
+        tape = _tape;
+        tapeDivisor = _tapeDivisor;
+    }
+
+    function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
+        // tape amount is 1%
+        uint256 tapeAmount = amount.div(tapeDivisor);
+        // recipient receives 1% tape tokens
+        tape.mint(recipient, tapeAmount);
+        // sender loses the 1% of the ROT
+        _burn(msg.sender, tapeAmount);
+        // sender transfers 99% of the ROT
+        return super.transfer(recipient, amount.sub(tapeAmount));
+    }
+
+    function transferFrom(address sender, address recipient, uint256 amount) virtual public override returns (bool) {
+        // tape amount is 1%
+        uint256 tapeAmount = amount.div(tapeDivisor);
+        // recipient receives 1% tape tokens
+        tape.mint(recipient, tapeAmount);
+        // sender loses the 1% of the ROT
+        _burn(sender, tapeAmount);
+        // sender transfers 99% of the ROT
+        return super.transferFrom(sender, recipient, amount.sub(tapeAmount));
+    }
+    // END OF ROTTEN SUSHI SPECIFIC CODE
+    
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterUniHub).
     function mint(address _to, uint256 _amount) public onlyOwner {
         _mint(_to, _amount);
