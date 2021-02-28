@@ -7,7 +7,7 @@
     "migrate:testnet": "truffle migrate --network testnet --reset",
     "migrate:bsc": "truffle migrate --network bsc --dry-run",
     "gen:standard": "~/.local/bin/solt write contracts/MasterUniHub.sol --npm",
-    "compile": "truffle compile --network bscTestnet",
+    "compile": "truffle compile --network testnet",
     "flatten": "truffle-flattener ./contracts/MasterUniHub.sol --output ./MasterUniHub_flat.sol",
     "flatten:timelock": "truffle-flattener ./contracts/Timelock.sol --output ./Timelock_flat.sol",
     "encode": "ts-node ./scripts/encode.ts",
