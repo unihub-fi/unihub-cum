@@ -10,7 +10,7 @@ pragma solidity 0.6.12;
  * GitHub:          https://github.com/ApeSwapFinance
  */
 
-import "./libs/token/BEP20.sol";
+import "@pancakeswap/pancake-swap-lib/contracts/token/BEP20/BEP20.sol";
 
 import "./CumToken.sol";
 
