@@ -59,7 +59,7 @@ contract MasterUniHub is Ownable {
         // We do some fancy math here. Basically, any point in time, the amount of CUMs
         // entitled to a user but is pending to be distributed is:
         //
-        //   pending reward = (user.amount * pool.accCumPerShare) - user.rewardDebt
+        //   pending reward = (user.amount * pool.accCakePerShare) - user.rewardDebt
         //
         // Whenever a user deposits or withdraws LP tokens to a pool. Here's what happens:
         //   1. The pool's `accCakePerShare` (and `lastRewardBlock`) gets updated.
