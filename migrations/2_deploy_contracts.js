@@ -11,7 +11,7 @@ const INITIAL_MINT = "25000";
 const BLOCKS_PER_HOUR = 3600 / 3; // 3sec Block Time
 const TOKENS_PER_BLOCK = "10";
 const BLOCKS_PER_DAY = 24 * BLOCKS_PER_HOUR;
-const TIMELOCK_DELAY_SECS = 3600;
+const TIMELOCK_DELAY_SECS = 3600 * 24;
 // Main Net
 const STARTING_BLOCK = 5662339;
 // Test Net
@@ -141,7 +141,6 @@ module.exports = async function (deployer, network, accounts) {
         CumToken: CumToken.address,
         CumShotBar: CumShotBar.address,
         TapeToken: TapeToken.address,
-        CakeLPToken: CakeLPToken.address,
         MultiCall: MultiCall.address,
         Timelock:Timelock.address,
       });

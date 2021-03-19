@@ -7,7 +7,7 @@ module.exports = {
     "libs",
     "libs",
     "libs",
-    "CumShottBar.sol",
+    "CumShotBar.sol",
     "CumToken.sol",
     "Timelock.sol"
   ],
