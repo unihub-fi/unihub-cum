@@ -1,13 +1,33 @@
 pragma solidity 0.6.12;
 
 /*
- * ApeSwapFinance 
- * App:      https://apeswap.finance
- * Medium:   https://medium.com/@ape_swap    
- * Twitter:  https://twitter.com/ape_swap 
- * Telegram: https://t.me/ape_swap
- * GitHub:   https://github.com/ApeSwapFinance
- */
+__________________________________________________________________
+ /_________________________________________________________________/|\
+ l                                                                 || \
+ l   ,-,.              #            #                  #         ||
+ l  { / ,__\                                                       ||
+ l { `}'- -/    #               #             #                  # ||
+ l {`}'\ o/                                                        ||
+ l  U__J  L   C'mon - it's wide open; surely you can stick it in!||
+ l .'   ' ._.      Website: unihub.fi                   ||
+ l/ /; o )  o) \    TG: https://t.me/unihub_chat          ||
+ / / \`~' `;'} :                                                   ||
+: {   )    (/ /                     #                 #            ||
+ \ \ /   .  )/                                                     ||
+ l\ Y      l/                #                 #              #    ||
+ l Y    \#/ \                                                      ||
+ l {     \  | .....................................................||..
+ l  \     \ |                                                      ||
+ l   `.    \;                                                      ||
+ l     `.   \                                                      ||
+ l       |)  :                                                     ||
+.l......./  /......................................................|'..
+         : /
+        / /{
+       / /_`-,
+      (_ \_~^^
+        `~~
+*/
 
 interface IMasterUniHub {
     function updateMultiplier(uint256 multiplierNumber) external; // onlyOwner

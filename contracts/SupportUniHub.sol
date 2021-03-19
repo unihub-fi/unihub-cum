@@ -1,14 +1,33 @@
 pragma solidity 0.6.12;
 
 /*
- * ApeSwapFinance 
- * App:             https://apeswap.finance
- * Medium:          https://medium.com/@ape_swap    
- * Twitter:         https://twitter.com/ape_swap 
- * Telegram:        https://t.me/ape_swap
- * Announcements:   https://t.me/ape_swap_news
- * GitHub:          https://github.com/ApeSwapFinance
- */
+__________________________________________________________________
+ /_________________________________________________________________/|\
+ l                                                                 || \
+ l   ,-,.              #            #                  #         ||
+ l  { / ,__\                                                       ||
+ l { `}'- -/    #               #             #                  # ||
+ l {`}'\ o/                                                        ||
+ l  U__J  L   C'mon - it's wide open; surely you can stick it in!||
+ l .'   ' ._.      Website: unihub.fi                   ||
+ l/ /; o )  o) \    TG: https://t.me/unihub_chat          ||
+ / / \`~' `;'} :                                                   ||
+: {   )    (/ /                     #                 #            ||
+ \ \ /   .  )/                                                     ||
+ l\ Y      l/                #                 #              #    ||
+ l Y    \#/ \                                                      ||
+ l {     \  | .....................................................||..
+ l  \     \ |                                                      ||
+ l   `.    \;                                                      ||
+ l     `.   \                                                      ||
+ l       |)  :                                                     ||
+.l......./  /......................................................|'..
+         : /
+        / /{
+       / /_`-,
+      (_ \_~^^
+        `~~
+*/
 
 import '@pancakeswap/pancake-swap-lib/contracts/math/SafeMath.sol';
 import '@pancakeswap/pancake-swap-lib/contracts/token/BEP20/IBEP20.sol';
