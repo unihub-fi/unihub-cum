@@ -60,7 +60,7 @@ contract CumToken is Context, IBEP20, Ownable {
         require(_tapeDivisor > 0, "Cum: tapeDivisor must be bigger than 0");
         tape = _tape;
         tapeDivisor = _tapeDivisor;
-        _name = 'UniHubSwapFinance Cum';
+        _name = 'CUM';
         _symbol = 'CUM';
         _decimals = 18;
     }
